@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CircuitosLogicos" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CircuitosLogicos" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="./" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CircuitosLogicos" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="./" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="Circuit.cpp" />
+		<Unit filename="Circuit.h" />
+		<Unit filename="Circuit_Connector.cpp" />
+		<Unit filename="Circuit_Debug.cpp" />
+		<Unit filename="Circuit_Draw.cpp" />
+		<Unit filename="Circuit_Operator.cpp" />
+		<Unit filename="Circuit_Template.cpp" />
+		<Unit filename="Circuit_Template.h" />
+		<Unit filename="Circuit_TrueTable.cpp" />
+		<Unit filename="CircuitosLogicosApp.cpp" />
+		<Unit filename="CircuitosLogicosApp.h" />
+		<Unit filename="CircuitosLogicosMain.cpp" />
+		<Unit filename="CircuitosLogicosMain.h" />
+		<Unit filename="Debug.cpp" />
+		<Unit filename="Debug.h" />
+		<Unit filename="Tetris.cpp" />
+		<Unit filename="Tetris.h" />
+		<Unit filename="Tetris_Board.cpp" />
+		<Unit filename="Tetris_Board.h" />
+		<Unit filename="Tetris_Shape.cpp" />
+		<Unit filename="Tetris_Shape.h" />
+		<Unit filename="wxsmith/CircuitosLogicosframe.wxs" />
+		<Unit filename="wxsmith/Debug.wxs" />
+		<Extensions>
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="CircuitosLogicosApp.cpp" main="CircuitosLogicosFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/CircuitosLogicosframe.wxs" src="CircuitosLogicosMain.cpp" hdr="CircuitosLogicosMain.h" fwddecl="0" i18n="1" name="CircuitosLogicosFrame" language="CPP" />
+					<wxFrame wxs="wxsmith/Debug.wxs" src="Debug.cpp" hdr="Debug.h" fwddecl="0" i18n="1" name="Debug" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
