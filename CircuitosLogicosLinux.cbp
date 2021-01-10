@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="CircuitosLogicos" />
+		<Option title="CircuitosLogicosLinux" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -33,38 +33,41 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wall" />
 			<Add option="`wx-config --cflags`" />
 			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
-			<Add option="-Wall" />
+			<Add directory="src" />
 		</Compiler>
 		<Linker>
 			<Add option="`wx-config --libs`" />
 		</Linker>
-		<Unit filename="Circuit.cpp" />
-		<Unit filename="Circuit.h" />
-		<Unit filename="Circuit_Connector.cpp" />
-		<Unit filename="Circuit_Debug.cpp" />
-		<Unit filename="Circuit_Draw.cpp" />
-		<Unit filename="Circuit_Operator.cpp" />
-		<Unit filename="Circuit_Template.cpp" />
-		<Unit filename="Circuit_Template.h" />
-		<Unit filename="Circuit_TrueTable.cpp" />
-		<Unit filename="CircuitosLogicosApp.cpp" />
-		<Unit filename="CircuitosLogicosApp.h" />
-		<Unit filename="CircuitosLogicosMain.cpp" />
-		<Unit filename="CircuitosLogicosMain.h" />
-		<Unit filename="Data.cpp" />
-		<Unit filename="Data.h" />
-		<Unit filename="Debug.cpp" />
-		<Unit filename="Debug.h" />
 		<Unit filename="LICENSE" />
 		<Unit filename="README.md" />
-		<Unit filename="Tetris.cpp" />
-		<Unit filename="Tetris.h" />
-		<Unit filename="Tetris_Board.cpp" />
-		<Unit filename="Tetris_Board.h" />
-		<Unit filename="Tetris_Shape.cpp" />
-		<Unit filename="Tetris_Shape.h" />
+		<Unit filename="src/Circuit.cpp" />
+		<Unit filename="src/Circuit.h" />
+		<Unit filename="src/Circuit_Connector.cpp" />
+		<Unit filename="src/Circuit_Debug.cpp" />
+		<Unit filename="src/Circuit_Draw.cpp" />
+		<Unit filename="src/Circuit_Operator.cpp" />
+		<Unit filename="src/Circuit_Template.cpp" />
+		<Unit filename="src/Circuit_Template.h" />
+		<Unit filename="src/Circuit_TrueTable.cpp" />
+		<Unit filename="src/CircuitosLogicosApp.cpp" />
+		<Unit filename="src/CircuitosLogicosApp.h" />
+		<Unit filename="src/CircuitosLogicosMain.cpp" />
+		<Unit filename="src/CircuitosLogicosMain.h" />
+		<Unit filename="src/Data.cpp" />
+		<Unit filename="src/Data.h" />
+		<Unit filename="src/Debub.cpp" />
+		<Unit filename="src/Debub.h" />
+		<Unit filename="src/Debug.cpp" />
+		<Unit filename="src/Debug.h" />
+		<Unit filename="src/Tetris.cpp" />
+		<Unit filename="src/Tetris.h" />
+		<Unit filename="src/Tetris_Board.cpp" />
+		<Unit filename="src/Tetris_Board.h" />
+		<Unit filename="src/Tetris_Shape.cpp" />
+		<Unit filename="src/Tetris_Shape.h" />
 		<Unit filename="wxsmith/CircuitosLogicosframe.wxs" />
 		<Unit filename="wxsmith/Debug.wxs" />
 		<Extensions>
