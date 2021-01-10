@@ -2,7 +2,7 @@
 #include "Tetris_Board.h"
 
 Tetris::Tetris(const wxString& title)
-       : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(180, 380))
+       : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(360, 720))
 {
   wxStatusBar *sb = CreateStatusBar();
   sb->SetStatusText(wxT("0"));

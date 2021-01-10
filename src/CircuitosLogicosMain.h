@@ -1,59 +1,43 @@
 /***************************************************************
- * Name:      CircuitosLogicosMain.h
+ * Name:      CircuitosLogicosLinuxMain.h
  * Purpose:   Defines Application Frame
  * Author:    Adriano Araujo (drida@drida.com.br)
- * Created:   2020-12-26
+ * Created:   2021-01-10
  * Copyright: Adriano Araujo (http://drida.com.br)
  * License:
  **************************************************************/
 
-#ifndef CIRCUITOSLOGICOSMAIN_H
-#define CIRCUITOSLOGICOSMAIN_H
+#ifndef CIRCUITOSLOGICOSLINUXMAIN_H
+#define CIRCUITOSLOGICOSLINUXMAIN_H
 
-//(*Headers(CircuitosLogicosFrame)
-#include <wx/frame.h>
-#include <wx/menu.h>
-#include <wx/statusbr.h>
-//*)
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
 
-class CircuitosLogicosFrame: public wxFrame
+#include "CircuitosLogicosApp.h"
+
+class CircuitosLogicosMain: public wxFrame
 {
-	public:
-
-		CircuitosLogicosFrame(wxWindow* parent,wxWindowID id = -1);
-		virtual ~CircuitosLogicosFrame();
-
-	private:
-
-		//(*Handlers(CircuitosLogicosFrame)
-		void OnQuit(wxCommandEvent& event);
-		void OnAbout(wxCommandEvent& event);
-		void OnNew(wxCommandEvent& event);
-		void OnDebug(wxCommandEvent& event);
-		void OnTemplate(wxCommandEvent& event);
-		void OnEraseBackground(wxEraseEvent& event);
-		void OnTetris(wxCommandEvent& event);
-		//*)
-
-		//(*Identifiers(CircuitosLogicosFrame)
-		static const long idMenuNew;
-		static const long idMenuQuit;
-		static const long idMenuTemplate;
-		static const long ID_MENUITEM1;
-		static const long idMenuDebug;
-		static const long idMenuAbout;
-		static const long ID_STATUSBAR1;
-		//*)
-
-		//(*Declarations(CircuitosLogicosFrame)
-		wxMenuItem* Menu3;
-		wxMenuItem* MenuItem3;
-		wxMenuItem* MenuItem4;
-		wxMenuItem* MenuItem5;
-		wxStatusBar* StatusBar1;
-		//*)
-
-		DECLARE_EVENT_TABLE()
+    public:
+        CircuitosLogicosMain(wxFrame *frame, const wxString& title);
+        ~CircuitosLogicosMain();
+    private:
+        enum
+        {
+        	idMenuTemplate = 1000,
+        	idMenuTetris ,
+        	idMenuGame,
+            idMenuQuit,
+            idMenuAbout
+        };
+        void OnTemplate(wxCommandEvent& event);
+        void OnTetris(wxCommandEvent& event);
+        void OnGame(wxCommandEvent& event);
+        void OnClose(wxCloseEvent& event);
+        void OnQuit(wxCommandEvent& event);
+        void OnAbout(wxCommandEvent& event);
+        DECLARE_EVENT_TABLE()
 };
 
-#endif // CIRCUITOSLOGICOSMAIN_H
+
+#endif // CIRCUITOSLOGICOSLINUXMAIN_H

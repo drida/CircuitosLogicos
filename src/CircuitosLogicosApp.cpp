@@ -1,37 +1,30 @@
 /***************************************************************
- * Name:      CircuitosLogicosApp.cpp
+ * Name:      CircuitosLogicosLinuxApp.cpp
  * Purpose:   Code for Application Class
  * Author:    Adriano Araujo (drida@drida.com.br)
- * Created:   2020-12-26
+ * Created:   2021-01-10
  * Copyright: Adriano Araujo (http://drida.com.br)
  * License:
  **************************************************************/
 
+#ifdef WX_PRECOMP
+#include "wx_pch.h"
+#endif
+
+#ifdef __BORLANDC__
+#pragma hdrstop
+#endif //__BORLANDC__
+
 #include "CircuitosLogicosApp.h"
-
-#include <iostream>
-
-//(*AppHeaders
 #include "CircuitosLogicosMain.h"
-#include <wx/image.h>
-//*)
-
 
 IMPLEMENT_APP(CircuitosLogicosApp);
 
 bool CircuitosLogicosApp::OnInit()
 {
-	//(*AppInitialize
-	bool wxsOK = true;
-	wxInitAllImageHandlers();
-	if ( wxsOK )
-	{
-	CircuitosLogicosFrame* Frame = new CircuitosLogicosFrame(0);
-	Frame->Show();
-	SetTopWindow(Frame);
-	}
-	//*)
+    CircuitosLogicosMain* frame = new CircuitosLogicosMain(0L, _("wxWidgets Application Template"));
 
-	return wxsOK;
+    frame->Show();
 
+    return true;
 }

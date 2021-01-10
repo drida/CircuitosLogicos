@@ -1,23 +1,21 @@
 /***************************************************************
- * Name:      CircuitosLogicosApp.h
+ * Name:      CircuitosLogicosLinuxApp.h
  * Purpose:   Defines Application Class
  * Author:    Adriano Araujo (drida@drida.com.br)
- * Created:   2020-12-26
+ * Created:   2021-01-10
  * Copyright: Adriano Araujo (http://drida.com.br)
  * License:
  **************************************************************/
 
-#ifndef CIRCUITOSLOGICOSAPP_H
-#define CIRCUITOSLOGICOSAPP_H
+#ifndef CIRCUITOSLOGICOSLINUXAPP_H
+#define CIRCUITOSLOGICOSLINUXAPP_H
 
 #include <wx/app.h>
 
 class CircuitosLogicosApp : public wxApp
 {
-	public:
-		virtual bool OnInit();
-
-
+    public:
+        virtual bool OnInit();
 };
 
-#endif // CIRCUITOSLOGICOSAPP_H
+#endif // CIRCUITOSLOGICOSLINUXAPP_H
