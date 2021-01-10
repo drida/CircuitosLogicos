@@ -39,7 +39,7 @@ void Circuit_Template::SetBackground(wxString file)
 
 void Circuit_Template::SetImageOperator(int index, int& x, int& y)
 {
-	static wxString OperatorImage[5] = {"assets/and.png", "assets/or.png","assets/and.png","assets/and.png","assets/and.png"};
+	static wxString OperatorImage[5] = {"assets/and.png", "assets/or.png","assets/not.png","assets/nand.png","assets/and.png"};
 	wxBitmap img;
 	int opX, opY;
 	vector<_Operator> Operators = localCircuit->GetOperators();
@@ -49,6 +49,8 @@ void Circuit_Template::SetImageOperator(int index, int& x, int& y)
 		int ot = Operators[index].GetOperatorType();
 		img.LoadFile(OperatorImage[ot], wxBITMAP_TYPE_PNG);
 		OperatorImageList[index] = {img};
+		x =  ((ImageDefaultW[ot]/2)-(img.GetWidth()/2)) + x;
+		y =  ((ImageDefaultH[ot]/2)-(img.GetHeight()/2)) + y;
 		Operators[index].SetCoordinates(x, y, img.GetWidth(), img.GetHeight());
 	}
 	else
@@ -90,6 +92,7 @@ void Circuit_Template::SetImageConnector(int index, int sourceSignal, int x, int
 
 void Circuit_Template::SetImageInOutConnector(int index, int opX, int opY)
 {
+	int x, y, W, H;
 	vector<_Connector> Connectors = localCircuit->GetConnectors();
 	vector<_Operator> Operators = localCircuit->GetOperators();
 	BooleanList out = Operators[index].GetOuts();
@@ -100,10 +103,11 @@ void Circuit_Template::SetImageInOutConnector(int index, int opX, int opY)
 		{
 			if(Connectors[k].GetIdLinkOperator() == index && Connectors[k].GetIdLinkSignal() == j)
 			{
+				Operators[index].GetCoordinates(x,y,W,H);
 				int opx = opX+150;
-				int opy = opY+50+(100*position);
-				int opoutx = opX+100;
-				int opouty = opY+(100/(out.size()+1))+4;
+				int opy = opY+50+(H*position);
+				int opoutx = opX+W-10;
+				int opouty = opY+(H/(out.size()+1));
 				CalculateConnector(k, opx, opy, opoutx, opouty);
 				position++;
 			}
@@ -129,6 +133,7 @@ void Circuit_Template::CalculateConnector(int index, int opX, int opY, int outX,
 				cY = (50*position) + cY;
 				CalculateConnector(cn, cX, cY, -1, -1);
 				position++;
+				localCircuit->SetConnectorSignal(cn, false);
 			}
 		}
 	}

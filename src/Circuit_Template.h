@@ -21,6 +21,8 @@ class Circuit_Template : public wxFrame
 
 		ImageList OperatorImageList;
 		ImageList ConnectorImageList;
+		int ImageDefaultW[5]={100,100,100,100,100};
+		int ImageDefaultH[5]={100,100,50,100,100};
 
 		void CalculateConnector(int index, int opX, int opY, int outX, int outY);
 		void SetImageOperator(int index, int& opX,int& opY);

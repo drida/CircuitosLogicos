@@ -53,8 +53,12 @@
 		<Unit filename="CircuitosLogicosApp.h" />
 		<Unit filename="CircuitosLogicosMain.cpp" />
 		<Unit filename="CircuitosLogicosMain.h" />
+		<Unit filename="Data.cpp" />
+		<Unit filename="Data.h" />
 		<Unit filename="Debug.cpp" />
 		<Unit filename="Debug.h" />
+		<Unit filename="LICENSE" />
+		<Unit filename="README.md" />
 		<Unit filename="Tetris.cpp" />
 		<Unit filename="Tetris.h" />
 		<Unit filename="Tetris_Board.cpp" />

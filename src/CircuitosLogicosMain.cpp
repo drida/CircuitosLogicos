@@ -134,16 +134,21 @@ void CircuitosLogicosFrame::OnTemplate(wxCommandEvent& event)
 {
 	Circuit* Fase1 = new Circuit();
 	Fase1->SetCoordinates(0, 0, 800, 600);
-	Fase1->AddOperator(otAND);
-	Fase1->AddOperator(otAND);
-	Fase1->AddOperator(otOR);
 	Fase1->AddOperator(otOR);
 	Fase1->AddOperator(otAND);
+	Fase1->AddOperator(otNOT);
+	Fase1->AddOperator(otNAND);
+	Fase1->AddOperator(otNOT);
 	Fase1->AddConnector(ctINPUT,0,0,-1,-1);
 	Fase1->AddConnector(ctINPUT,0,1,-1,-1);
+	Fase1->AddConnector(ctINPUT,2,0,-1,-1);
+	Fase1->AddConnector(ctINPUT,3,0,-1,-1);
+	Fase1->AddConnector(ctINPUT,3,1,-1,-1);
 	Fase1->AddConnector(ctIN_OUT,1,0,0,0);
-	Fase1->AddConnector(ctINPUT,1,1,-1,-1);
+	Fase1->AddConnector(ctIN_OUT,1,1,2,0);
+	Fase1->AddConnector(ctIN_OUT,4,0,3,0);
 	Fase1->AddConnector(ctOUTPUT,-1,-1,1,0);
+	Fase1->AddConnector(ctOUTPUT,-1,-1,4,0);
 /*
 	Fase1->AddConnector(ctINPUT,2,0,-1,-1);
 	Fase1->AddConnector(ctINPUT,2,1,-1,-1);

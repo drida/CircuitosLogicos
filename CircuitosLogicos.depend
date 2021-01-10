@@ -7,13 +7,13 @@
 	<vector>
 	<time.h>
 
-1609937272 source:/home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosApp.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosApp.cpp
 	"CircuitosLogicosApp.h"
 	<iostream>
 	"CircuitosLogicosMain.h"
 	<wx/image.h>
 
-1609895922 /home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosApp.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosApp.h
 	<wx/app.h>
 
 1609445550 /usr/local/include/wx-3.0/wx/app.h
@@ -589,7 +589,7 @@
 
 1609445551 /usr/local/include/wx-3.0/wx/gtk/app.h
 
-1609595440 /home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosMain.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosMain.h
 	<wx/frame.h>
 	<wx/menu.h>
 	<wx/statusbr.h>
@@ -940,7 +940,7 @@
 
 1609445552 /usr/local/include/wx-3.0/wx/gtk/menu.h
 
-1609943899 source:/home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosMain.cpp
+1610210863 source:/home/drida/Projetos/c/CircuitosLogicos/CircuitosLogicosMain.cpp
 	"CircuitosLogicosMain.h"
 	"Circuit.h"
 	"Debug.h"
@@ -1243,7 +1243,7 @@
 
 1609445552 /usr/local/include/wx-3.0/wx/gtk/stattext.h
 
-1609943981 /home/drida/Projetos/c/CircuitosLogicos/Debug.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/Debug.h
 	"Circuit.h"
 	<wx/button.h>
 	<wx/combobox.h>
@@ -1252,7 +1252,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1609976425 source:/home/drida/Projetos/c/CircuitosLogicos/Debug.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Debug.cpp
 	"Debug.h"
 	<wx/intl.h>
 	<wx/string.h>
@@ -1338,36 +1338,36 @@
 1609253955 /home/drida/Projetos/c/CircuitosLogicos/Circuito_Template.h
 	<wx/frame.h>
 
-1609884010 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit.cpp
 	"Circuit.h"
 
-1609872351 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Connector.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Connector.cpp
 	"Circuit.h"
 
-1609812187 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Debug.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Debug.cpp
 	"Circuit.h"
 
-1609813025 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Operator.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Operator.cpp
 	"Circuit.h"
 
 1609277666 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Signal.cpp
 	"Circuit.h"
 
-1609893899 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Template.cpp
+1610229923 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Template.cpp
 	"Circuit_Template.h"
 	"wx/file.h"
 	"wx/frame.h"
 
-1609803935 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_TrueTable.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_TrueTable.cpp
 	"Circuit.h"
 
-1609889919 /home/drida/Projetos/c/CircuitosLogicos/Circuit.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/Circuit.h
 	<iostream>
 	<vector>
 	<time.h>
 	<wx/wx.h>
 
-1609888150 /home/drida/Projetos/c/CircuitosLogicos/Circuit_Template.h
+1610229975 /home/drida/Projetos/c/CircuitosLogicos/Circuit_Template.h
 	<Circuit.h>
 	<wx/wx.h>
 
@@ -1788,7 +1788,7 @@
 1609445552 /usr/local/include/wx-3.0/wx/gtk/mdi.h
 	"wx/frame.h"
 
-1609889919 /home/drida/Projetos/c/CircuitosLogicos//Circuit.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos//Circuit.h
 	<iostream>
 	<vector>
 	<time.h>
@@ -2028,27 +2028,141 @@
 1609445551 /usr/local/include/wx-3.0/wx/generic/imaglist.h
 	"wx/list.h"
 
-1609595579 source:/home/drida/Projetos/c/CircuitosLogicos/Tetris_Board.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Tetris_Board.cpp
 	"Tetris_Board.h"
 
-1609606255 /home/drida/Projetos/c/CircuitosLogicos/Tetris_Board.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/Tetris_Board.h
 	"Tetris_Shape.h"
 	<wx/wx.h>
 
-1609595273 /home/drida/Projetos/c/CircuitosLogicos/Tetris_Shape.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/Tetris_Shape.h
 
-1609595520 /home/drida/Projetos/c/CircuitosLogicos/Tetris.h
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/Tetris.h
 	<wx/wx.h>
 
-1609595627 source:/home/drida/Projetos/c/CircuitosLogicos/Tetris.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Tetris.cpp
 	"Tetris.h"
 	"Tetris_Board.h"
 
-1609595606 source:/home/drida/Projetos/c/CircuitosLogicos/Tetris_Shape.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Tetris_Shape.cpp
 	<stdlib.h>
 	<algorithm>
 	"Tetris_Shape.h"
 
-1609805793 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Draw.cpp
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/Circuit_Draw.cpp
 	"Circuit.h"
+
+1610055475 source:/home/drida/Projetos/c/CircuitosLogicos/Data.cpp
+	<Data.h>
+
+1610146736 /home/drida/Projetos/c/CircuitosLogicos//Data.h
+	"sqlite3.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit.cpp
+	"Circuit.h"
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Circuit.h
+	<iostream>
+	<vector>
+	<time.h>
+	<wx/wx.h>
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Connector.cpp
+	"Circuit.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Debug.cpp
+	"Circuit.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Draw.cpp
+	"Circuit.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Operator.cpp
+	"Circuit.h"
+
+1610247252 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Template.cpp
+	"Circuit_Template.h"
+	"wx/file.h"
+	"wx/frame.h"
+
+1610229975 /home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Template.h
+	<Circuit.h>
+	<wx/wx.h>
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_TrueTable.cpp
+	"Circuit.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosApp.cpp
+	"CircuitosLogicosApp.h"
+	<iostream>
+	"CircuitosLogicosMain.h"
+	<wx/image.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosApp.h
+	<wx/app.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosMain.h
+	<wx/frame.h>
+	<wx/menu.h>
+	<wx/statusbr.h>
+
+1610210863 source:/home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosMain.cpp
+	"CircuitosLogicosMain.h"
+	"Circuit.h"
+	"Debug.h"
+	"Tetris.h"
+	"Circuit_Template.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Debug.h
+	"Circuit.h"
+	<wx/button.h>
+	<wx/combobox.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris.h
+	<wx/wx.h>
+
+1610055475 source:/home/drida/Projetos/c/CircuitosLogicos/src/Data.cpp
+	<Data.h>
+
+1610146736 /home/drida/Projetos/c/CircuitosLogicos/src/Data.h
+	"sqlite3.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Debub.cpp
+	"Debub.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Debub.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/textctrl.h>
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Debug.cpp
+	"Debug.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris.cpp
+	"Tetris.h"
+	"Tetris_Board.h"
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Board.h
+	"Tetris_Shape.h"
+	<wx/wx.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Shape.h
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Board.cpp
+	"Tetris_Board.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Shape.cpp
+	<stdlib.h>
+	<algorithm>
+	"Tetris_Shape.h"
 

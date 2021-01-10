@@ -424,6 +424,230 @@
          result="composite2"
          id="feComposite529" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter820">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood810" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite812" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur814" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset816" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite818" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter6626-3-6-36">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood6616-6-2-7" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite6618-7-9-5" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur6620-5-1-3" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset6622-3-2-5" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite6624-5-7-62" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter484">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood474" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite476" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur"
+         id="feGaussianBlur478" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset480" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite482" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter496">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood486" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite488" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur"
+         id="feGaussianBlur490" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset492" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite494" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter532">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood522" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite524" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.3"
+         result="blur"
+         id="feGaussianBlur526" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset528" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite530" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter532-7">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood522-0" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite524-9" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.3"
+         result="blur"
+         id="feGaussianBlur526-3" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset528-6" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite530-0" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter484-6">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood474-2" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite476-6" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur"
+         id="feGaussianBlur478-1" />
+      <feOffset
+         dx="1.38778e-16"
+         dy="4.52416e-15"
+         result="offset"
+         id="feOffset480-8" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite482-7" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -432,11 +656,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.463553"
-     inkscape:cx="115.35423"
-     inkscape:cy="40.98596"
+     inkscape:zoom="5.7844981"
+     inkscape:cx="53.345389"
+     inkscape:cy="48.12784"
      inkscape:document-units="px"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer2"
      showgrid="false"
      units="px"
      showguides="true"
@@ -493,6 +717,27 @@
        orientation="1,0"
        id="guide26"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="-2.7502394,13.229167"
+       orientation="0,1"
+       id="guide293"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="4.6601279,0"
+       orientation="0,1"
+       id="guide303"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="2.646,29.136424"
+       orientation="1,0"
+       id="guide374"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -502,7 +747,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -615,33 +860,35 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="AND"
-     style="display:none">
+     style="display:inline">
     <rect
        style="display:inline;fill:none;stroke:none;stroke-width:0.26458332"
-       id="rect18"
+       id="rect18-9-9"
        width="26.458332"
        height="26.458332"
-       x="0.0008339691"
-       y="9.6911617e-07"
-       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/and.png"
+       x="0.0008341677"
+       y="1.109552e-06"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
-       style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter6626-3-6)"
-       d="m 1.3229995,1.3221655 v 11.9070015 11.907 H 13.096212 v -0.007 a 11.907,11.907001 0 0 0 0.133787,0.007 11.907,11.907001 0 0 0 11.907001,-11.907 11.907,11.907001 0 0 0 -11.907001,-11.9070015 11.907,11.907001 0 0 0 -0.133787,0.005 v -0.005 z"
-       id="rect4564"
+       style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter484-6)"
+       d="M 1.322917,1.3221673 V 25.13617 l 10.450212,-2e-6 v -0.007 c 0.04458,0.0026 0.08918,0.0049 0.133787,0.007 6.576055,10e-7 11.907,-5.330945 11.907001,-11.907 0,-6.5760564 -5.330946,-11.9070031 -11.907001,-11.9070025 -0.0446,0.00142 -0.0892,0.00308 -0.133787,0.005 v -0.005 z"
+       id="rect4564-1-2"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/and.png"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-ydpi="96"
+       sodipodi:nodetypes="cccccscccc" />
     <path
-       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 9.1263753,2.3139703 c -2.240404,0.0354 -4.481956,0.13307 -6.722656,0.0625 0.04229,7.1873003 -0.0836,14.5598307 0.0625,21.6328107 C 8.8907323,23.682401 16.768638,25.8283 21.563876,20.224121 27.291348,14.094141 22.534709,2.2668403 13.913938,2.4540204 12.357069,2.3023803 10.729961,2.2999703 9.1263753,2.3139703 Z"
-       id="path6125"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/and.png"
+       sodipodi:nodetypes="cccccscccc"
+       inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:connector-curvature="0"
+       id="path376-0"
+       d="M 1.984417,1.9836692 V 24.474668 l 9.835494,-2e-6 v -0.0066 c 0.04196,0.0025 0.08393,0.0046 0.125917,0.0066 6.189228,1e-6 11.206588,-5.03478 11.206589,-11.245498 0,-6.2107194 -5.017361,-11.2455012 -11.206589,-11.2455007 -0.04198,0.00135 -0.08395,0.00291 -0.125917,0.00472 v -0.00472 z"
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -679,7 +926,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="INPUT">
+     inkscape:label="INPUT"
+     style="display:none">
     <rect
        style="display:inline;fill:none;stroke:none;stroke-width:0.26458332"
        id="rect18-6"
@@ -727,14 +975,14 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot249"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
          id="flowRegion251"><rect
            id="rect253"
            width="61.246944"
            height="86.358192"
            x="-84.316628"
            y="-11.469437" /></flowRegion><flowPara
-         id="flowPara255"></flowPara></flowRoot>    <text
+         id="flowPara255" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58399963px;line-height:1.25;font-family:'Tlwg Typewriter';-inkscape-font-specification:'Tlwg Typewriter Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26460001"
        x="3.508178"
@@ -750,7 +998,7 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Tlwg Typewriter';-inkscape-font-specification:'Tlwg Typewriter Bold';stroke-width:0.26460001">0</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58399963px;line-height:1.25;font-family:'Tlwg Typewriter';-inkscape-font-specification:'Tlwg Typewriter Bold';letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.26460001;"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58399963px;line-height:1.25;font-family:'Tlwg Typewriter';-inkscape-font-specification:'Tlwg Typewriter Bold';letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.26460001"
        x="3.4152155"
        y="23.299067"
        id="text315"
@@ -761,6 +1009,82 @@
          id="tspan313"
          x="3.4152155"
          y="23.299067"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Tlwg Typewriter';-inkscape-font-specification:'Tlwg Typewriter Bold';stroke-width:0.26460001;fill:#008000;">1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Tlwg Typewriter';-inkscape-font-specification:'Tlwg Typewriter Bold';fill:#008000;stroke-width:0.26460001">1</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="NOT"
+     style="display:none">
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000012;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter820)"
+       d="M 5,5 V 27.5 50 L 30,38.75 49.375,30.03125 A 6.6716434,6.6716434 0 0 0 55.220703,33.5 6.6716434,6.6716434 0 0 0 61.890625,26.828125 6.6716434,6.6716434 0 0 0 55.220703,20.15625 6.6716434,6.6716434 0 0 0 48.884766,24.748047 L 30,16.25 Z"
+       transform="matrix(0.2646,0,0,0.2646,0,-8.33e-4)"
+       id="path295"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/not.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:connector-curvature="0" />
+    <path
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000012;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 8.1289062,9.3535156 V 27.5 45.646484 L 28.435547,36.572266 48.740234,27.5 28.435547,18.427734 Z M 55.220703,22.0625 a 4.2222534,4.7665618 0 0 0 -4.222656,4.765625 4.2222534,4.7665618 0 0 0 4.222656,4.767578 4.2222534,4.7665618 0 0 0 4.220703,-4.767578 4.2222534,4.7665618 0 0 0 -4.220703,-4.765625 z"
+       transform="matrix(0.2646,0,0,0.2646,0,-8.33e-4)"
+       id="path324"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/not.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="NAND"
+     style="display:none">
+    <rect
+       style="display:inline;fill:none;stroke:none;stroke-width:0.26458332"
+       id="rect18-9"
+       width="26.458332"
+       height="26.458332"
+       x="0.00083399354"
+       y="1.2069702e-06"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter484)"
+       d="M 1.3229167,1.3221673 V 25.136169 l 10.4502123,-2e-6 v -0.007 c 0.04458,0.0026 0.08918,0.0049 0.133787,0.007 6.576055,1e-6 11.907,-5.330945 11.907001,-11.907 0,-6.5760557 -5.330946,-11.9070021 -11.907001,-11.9070015 -0.0446,0.00142 -0.0892,0.00308 -0.133787,0.005 v -0.005 z"
+       id="rect4564-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       sodipodi:nodetypes="cccccscccc" />
+    <path
+       sodipodi:nodetypes="cccccscccc"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:connector-curvature="0"
+       id="path376"
+       d="m 1.9844167,1.983669 v 22.490998 l 9.8354943,-2e-6 v -0.0066 c 0.04196,0.0025 0.08393,0.0046 0.125917,0.0066 6.189228,10e-7 11.206588,-5.03478 11.206589,-11.245498 0,-6.2107183 -5.017361,-11.2455003 -11.206589,-11.2454997 -0.04198,0.00134 -0.08395,0.00291 -0.125917,0.00472 v -0.00472 z"
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none" />
+    <circle
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter532)"
+       id="path370"
+       cx="24.4755"
+       cy="13.229167"
+       r="1.9845001"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       cy="13.229167"
+       cx="24.4755"
+       id="circle372"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26460001;stroke-miterlimit:4;stroke-dasharray:none"
+       r="1.323"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>
