@@ -61,10 +61,6 @@
 		<Unit filename="src/CircuitosLogicosMain.h" />
 		<Unit filename="src/Data.cpp" />
 		<Unit filename="src/Data.h" />
-		<Unit filename="src/Debub.cpp" />
-		<Unit filename="src/Debub.h" />
-		<Unit filename="src/Debug.cpp" />
-		<Unit filename="src/Debug.h" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Game.h" />
 		<Unit filename="src/Game_Panel.cpp" />
@@ -75,8 +71,6 @@
 		<Unit filename="src/Tetris_Board.h" />
 		<Unit filename="src/Tetris_Shape.cpp" />
 		<Unit filename="src/Tetris_Shape.h" />
-		<Unit filename="wxsmith/CircuitosLogicosframe.wxs" />
-		<Unit filename="wxsmith/Debug.wxs" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">

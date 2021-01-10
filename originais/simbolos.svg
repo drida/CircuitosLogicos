@@ -868,7 +868,7 @@
        height="26.458332"
        x="0.0008341677"
        y="1.109552e-06"
-       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/and.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
@@ -876,7 +876,7 @@
        d="M 1.322917,1.3221673 V 25.13617 l 10.450212,-2e-6 v -0.007 c 0.04458,0.0026 0.08918,0.0049 0.133787,0.007 6.576055,10e-7 11.907,-5.330945 11.907001,-11.907 0,-6.5760564 -5.330946,-11.9070031 -11.907001,-11.9070025 -0.0446,0.00142 -0.0892,0.00308 -0.133787,0.005 v -0.005 z"
        id="rect4564-1-2"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/and.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"
        sodipodi:nodetypes="cccccscccc" />
@@ -884,7 +884,7 @@
        sodipodi:nodetypes="cccccscccc"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/nand.png"
+       inkscape:export-filename="/home/drida/Projetos/c/CircuitosLogicos/assets/and.png"
        inkscape:connector-curvature="0"
        id="path376-0"
        d="M 1.984417,1.9836692 V 24.474668 l 9.835494,-2e-6 v -0.0066 c 0.04196,0.0025 0.08393,0.0046 0.125917,0.0066 6.189228,1e-6 11.206588,-5.03478 11.206589,-11.245498 0,-6.2107194 -5.017361,-11.2455012 -11.206589,-11.2455007 -0.04198,0.00135 -0.08395,0.00291 -0.125917,0.00472 v -0.00472 z"

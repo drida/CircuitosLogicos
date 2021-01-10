@@ -1,12 +1,15 @@
 # depslib dependency file v1.0
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit.cpp
+1610316888 source:/home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosMain.cpp
+	"wx_pch.h"
+	"CircuitosLogicosMain.h"
 	"Circuit.h"
+	"Circuit_Template.h"
+	"Game.h"
+	"Tetris.h"
 
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Circuit.h
-	<iostream>
-	<vector>
-	<time.h>
+1610314781 /home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosMain.h
 	<wx/wx.h>
+	"CircuitosLogicosApp.h"
 
 1609445551 /usr/local/include/wx-3.0/wx/wx.h
 	"wx/defs.h"
@@ -1635,6 +1638,44 @@
 1609445552 /usr/local/include/wx-3.0/wx/gtk/mdi.h
 	"wx/frame.h"
 
+1610314031 /home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosApp.h
+	<wx/app.h>
+
+1610314058 source:/home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosApp.cpp
+	"wx_pch.h"
+	"CircuitosLogicosApp.h"
+	"CircuitosLogicosMain.h"
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris.h
+	<wx/wx.h>
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Board.cpp
+	"Tetris_Board.h"
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Board.h
+	"Tetris_Shape.h"
+	<wx/wx.h>
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Shape.h
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Shape.cpp
+	<stdlib.h>
+	<algorithm>
+	"Tetris_Shape.h"
+
+1610315100 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris.cpp
+	"Tetris.h"
+	"Tetris_Board.h"
+
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit.cpp
+	"Circuit.h"
+
+1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Circuit.h
+	<iostream>
+	<vector>
+	<time.h>
+	<wx/wx.h>
+
 1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Connector.cpp
 	"Circuit.h"
 
@@ -1647,6 +1688,9 @@
 1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Operator.cpp
 	"Circuit.h"
 
+1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_TrueTable.cpp
+	"Circuit.h"
+
 1610247252 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_Template.cpp
 	"Circuit_Template.h"
 	"wx/file.h"
@@ -1656,81 +1700,25 @@
 	<Circuit.h>
 	<wx/wx.h>
 
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Circuit_TrueTable.cpp
-	"Circuit.h"
-
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosApp.cpp
-	"CircuitosLogicosApp.h"
-	<iostream>
-	"CircuitosLogicosMain.h"
-	<wx/image.h>
-
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosApp.h
-	<wx/app.h>
-
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosMain.h
-	<wx/frame.h>
-	<wx/menu.h>
-	<wx/statusbr.h>
-
-1610210863 source:/home/drida/Projetos/c/CircuitosLogicos/src/CircuitosLogicosMain.cpp
-	"CircuitosLogicosMain.h"
-	"Circuit.h"
-	"Debug.h"
-	"Tetris.h"
-	"Circuit_Template.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Debug.h
-	"Circuit.h"
-	<wx/button.h>
-	<wx/combobox.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/stattext.h>
-	<wx/textctrl.h>
-
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris.h
-	<wx/wx.h>
-
 1610055475 source:/home/drida/Projetos/c/CircuitosLogicos/src/Data.cpp
 	<Data.h>
 
-1610146736 /home/drida/Projetos/c/CircuitosLogicos/src/Data.h
-	"sqlite3.h"
+1610309775 /home/drida/Projetos/c/CircuitosLogicos/src/Data.h
 
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Debub.cpp
-	"Debub.h"
-	<wx/intl.h>
-	<wx/string.h>
+1610316792 source:/home/drida/Projetos/c/CircuitosLogicos/src/Game.cpp
+	"Game.h"
+	"Game_Panel.h"
 
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Debub.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/textctrl.h>
-
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Debug.cpp
-	"Debug.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris.cpp
-	"Tetris.h"
-	"Tetris_Board.h"
-
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Board.h
-	"Tetris_Shape.h"
+1610316328 /home/drida/Projetos/c/CircuitosLogicos/src/Game.h
+	"Circuit.h"
 	<wx/wx.h>
 
-1609981831 /home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Shape.h
+1610316772 /home/drida/Projetos/c/CircuitosLogicos/src/Game_Panel.h
+	<Circuit.h>
+	"wx/file.h"
+	"wx/frame.h"
+	<wx/wx.h>
 
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Board.cpp
-	"Tetris_Board.h"
-
-1609981831 source:/home/drida/Projetos/c/CircuitosLogicos/src/Tetris_Shape.cpp
-	<stdlib.h>
-	<algorithm>
-	"Tetris_Shape.h"
+1610316818 source:/home/drida/Projetos/c/CircuitosLogicos/src/Game_Panel.cpp
+	"Game_Panel.h"
 
