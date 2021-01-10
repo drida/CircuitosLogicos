@@ -2,5 +2,6 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Workspace">
 		<Project filename="CircuitosLogicosLinux.cbp" />
+		<Project filename="CircuitosLogicosWindows.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

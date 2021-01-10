@@ -1,7 +1,7 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include "sqlite3.h"
+//#include "sqlite3.h"
 
 class _Data
 {

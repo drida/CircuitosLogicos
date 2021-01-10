@@ -16,6 +16,7 @@
 #include <wx/image.h>
 //*)
 
+
 IMPLEMENT_APP(CircuitosLogicosApp);
 
 bool CircuitosLogicosApp::OnInit()
@@ -25,9 +26,9 @@ bool CircuitosLogicosApp::OnInit()
 	wxInitAllImageHandlers();
 	if ( wxsOK )
 	{
-		CircuitosLogicosFrame* Frame = new CircuitosLogicosFrame(0);
-		Frame->Show();
-		SetTopWindow(Frame);
+	CircuitosLogicosFrame* Frame = new CircuitosLogicosFrame(0);
+	Frame->Show();
+	SetTopWindow(Frame);
 	}
 	//*)
 
