@@ -151,8 +151,7 @@ void CircuitosLogicosMain::OnGame(wxCommandEvent &event)
 	Fase1->AddConnector(ctOUTPUT,-1,-1,4,0);
 
 	Game* Frame = new Game(wxT("FASE 1"), Fase1);
-	//Frame->SetBackground("assets/background.png");
-	//Frame->SetBackground("../assets/14624.jpg");
+	Frame->SetBackground("assets/background.png");
 	Frame->Centre();
 	Frame->Show(true);
 }

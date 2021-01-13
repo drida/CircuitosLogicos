@@ -12,8 +12,8 @@ class Game_Panel : public wxPanel
 {
 	public:
 		Game_Panel(wxFrame *parent,  Circuit* stage);
-		void SetBackground(wxString file = "");
-		void OnEraseBackground(wxEraseEvent& event);
+
+
 		void OnPaint(wxPaintEvent& event);
 		void OnLeftDown(wxMouseEvent& event);
 		bool getSinal(int index);
@@ -30,11 +30,6 @@ class Game_Panel : public wxPanel
 		void SetImageOperator(int index, int& opX,int& opY);
 		void SetImageConnector(int index, int sourceSignal, int opX, int opY);
 		void SetImageInOutConnector(int index, int sourceSignal, int opY);
-
-		wxBitmap Background;
-		bool ImageBackground;
-		void TileBitmap(const wxRect& rect, wxDC& dc, wxBitmap& bitmap);
-		void ResizeBitmap(const wxRect& rect, wxDC& dc, wxBitmap& bitmap);
 };
 
 #endif // GAME_PANEL_H

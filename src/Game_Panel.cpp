@@ -18,38 +18,48 @@ Game_Panel::Game_Panel(wxFrame *parent, Circuit* stage)
 
 	CalculateConnector(-1,-1,-1,-1,-1);
 
-	Connect(wxEVT_ERASE_BACKGROUND,(wxObjectEventFunction)&Game_Panel::OnEraseBackground);
+
 	Connect(wxEVT_PAINT, wxPaintEventHandler(Game_Panel::OnPaint));
 	Connect(wxEVT_LEFT_DOWN,(wxObjectEventFunction)&Game_Panel::OnLeftDown);
 }
 
-void Game_Panel::SetBackground(wxString file)
-{
-		wxImage BG;
-		ImageBackground = false;
-		if (access(file.c_str(), F_OK ) != -1 )
-		{
-			BG.LoadFile(file, wxBITMAP_TYPE_ANY);
-			ImageBackground = true;
-			Background = wxBitmap(BG);
-		}
-}
+
 
 void Game_Panel::SetImageOperator(int index, int& x, int& y)
 {
-	static wxString OperatorImage[5] = {"assets/and.png", "assets/or.png","assets/not.png","assets/nand.png","assets/and.png"};
-	wxBitmap img;
+	static wxString OperatorImage[5] = {
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\and.png",
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\or.png",
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\not.png",
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\nand.png",
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\and.png"
+    };
+    wxImage Image;
+	wxBitmap Bmp;
 	int opX, opY;
 	vector<_Operator> Operators = localCircuit->GetOperators();
+
+	int ot = Operators[index].GetOperatorType();
 	Operators[index].GetCoordinates(opX, opY);
+
 	if(opX == -1 && opY == -1)
 	{
-		int ot = Operators[index].GetOperatorType();
-		img.LoadFile(OperatorImage[ot], wxBITMAP_TYPE_PNG);
-		OperatorImageList[index] = {img};
-		x =  ((ImageDefaultW[ot]/2)-(img.GetWidth()/2)) + x;
-		y =  ((ImageDefaultH[ot]/2)-(img.GetHeight()/2)) + y;
-		Operators[index].SetCoordinates(x, y, img.GetWidth(), img.GetHeight());
+        wxString SelectedImage = OperatorImage[ot];
+        if (access(SelectedImage.c_str(), F_OK ) != -1 )
+        {
+            Image.LoadFile(SelectedImage, wxBITMAP_TYPE_ANY);
+            Bmp = wxBitmap(Image);
+            OperatorImageList[index] = {Bmp};
+            x =  ((ImageDefaultW[ot]/2)-(Bmp.GetWidth()/2)) + x;
+            y =  ((ImageDefaultH[ot]/2)-(Bmp.GetHeight()/2)) + y;
+            Operators[index].SetCoordinates(x, y, Bmp.GetWidth(), Bmp.GetHeight());
+        }
+        else
+        {
+            x = -1;
+            y = -1;
+
+        }
 	}
 	else
 	{
@@ -60,32 +70,44 @@ void Game_Panel::SetImageOperator(int index, int& x, int& y)
 
 void Game_Panel::SetImageConnector(int index, int sourceSignal, int x, int y)
 {
-	static wxString ConnectorImage[3] = {"assets/input.png", "assets/input.png", "assets/input.png"};
-	wxBitmap img;
+	static wxString ConnectorImage[3] = {
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\input.png",
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\input.png",
+	    "D:\900-ServidorProducao\DriDaTIC\CircuitosLogicos\assets\input.png"
+    };
+    wxImage Image;
+	wxBitmap Bmp;
 	int cX, cY, W, H;
 	vector<_Connector> Connectors = localCircuit->GetConnectors();
+
 	int ct = Connectors[index].GetConnectorType();
 	Connectors[index].GetCoordinatesConnector(cX, cY);
+
 	if(cX == -1 && cY == -1)
 	{
-		img.LoadFile(ConnectorImage[ct], wxBITMAP_TYPE_PNG);
-		wxBitmap T = img.GetSubBitmap(wxRect(0,0,50,50));
-		wxBitmap F = img.GetSubBitmap(wxRect(0,50,50,50));
-		ConnectorImageList[index] = {T,F};
-		localCircuit->GetCoordinates(cX,cY,W,H);
-		if (ct == 0)
-		{
-			cX += 20;
-			cY = y+(50*sourceSignal)+4;
-		}
-		else
-		{
-			cX += W - 70;
-			cY= y+(50*sourceSignal)+29;
+        wxString SelectedImage = ConnectorImage[ct];
+        if (access(SelectedImage.c_str(), F_OK ) != -1 )
+        {
+            Image.LoadFile(SelectedImage, wxBITMAP_TYPE_ANY);
+            Bmp = wxBitmap(Image);
+            wxBitmap T = Bmp.GetSubBitmap(wxRect(0,0,50,50));
+            wxBitmap F = Bmp.GetSubBitmap(wxRect(0,50,50,50));
+            ConnectorImageList[index] = {T,F};
+            localCircuit->GetCoordinates(cX,cY,W,H);
+            if (ct == 0)
+            {
+                cX += 20;
+                cY = y+(50*sourceSignal)+4;
+            }
+            else
+            {
+                cX += W - 70;
+                cY= y+(50*sourceSignal)+29;
 
-		}
-		Connectors[index].SetCoordinatesConnector(cX, cY, T.GetWidth(), T.GetHeight());
-	}
+            }
+            Connectors[index].SetCoordinatesConnector(cX, cY, T.GetWidth(), T.GetHeight());
+        }
+    }
 }
 
 void Game_Panel::SetImageInOutConnector(int index, int opX, int opY)
@@ -237,85 +259,4 @@ void Game_Panel::OnLeftDown(wxMouseEvent& event)
 		}
 	}
 	Refresh();
-}
-
-void Game_Panel::OnEraseBackground(wxEraseEvent& event)
-{
-	int circuitX, circuitY, cX, cY, W, H;
-	localCircuit->GetCoordinates(circuitX, circuitY, W, H);
-	wxSize sz = GetClientSize();
-	circuitX = (sz.GetWidth()/2) - (W/2);
-	circuitY = (sz.GetHeight()/2) - (H/2);
-	localCircuit->SetCoordinates(circuitX, circuitY, W, H);
-
-	if (!ImageBackground)
-	{
-		wxDC* pDC = event.GetDC();
-		wxColor color(255, 255, 255);
-		wxBrush brush(color, wxSOLID);
-		pDC->SetBackground(brush);
-		pDC->Clear();
-	}
-	else
-	{
-		wxBitmap& bitmap = Background;
-		wxScrolledCanvas m_pview;
-		if (bitmap.Ok() ) {
-			wxSize sz = GetClientSize();
-			int xOrg, yOrg;
-			m_pview.GetViewStart(&xOrg, &yOrg);
-			wxInt32 pixelsPerStepX, pixelsPerStepY;
-			m_pview.GetScrollPixelsPerUnit(&pixelsPerStepX, &pixelsPerStepY);
-			xOrg *= pixelsPerStepX;
-			yOrg *= pixelsPerStepY;
-
-			int w = bitmap.GetWidth();
-			int h = bitmap.GetHeight();
-			int xShift = xOrg % w;
-			int yShift = yOrg % h;
-			wxRect rect(-xShift, -yShift, sz.x+xShift, sz.y+yShift);
-
-			if (event.GetDC() ) {
-				TileBitmap(rect, *(event.GetDC()), bitmap);
-				ResizeBitmap(rect, *(event.GetDC()), bitmap);
-			} else {
-				wxClientDC dc(this);
-				TileBitmap(rect, dc, bitmap);
-			}
-		}
-		else
-			event.Skip();
-	}
-}
-
-void Game_Panel::TileBitmap(const wxRect& rect, wxDC& dc, wxBitmap& bitmap)
-{
-    int w = bitmap.GetWidth();
-    int h = bitmap.GetHeight();
-
-    int i, j;
-    for (i = rect.x; i < rect.x + rect.width; i += w) {
-        for (j = rect.y; j < rect.y + rect.height; j+= h)
-            dc.DrawBitmap(bitmap, i, j);
-    }
-}
-
-void Game_Panel::ResizeBitmap(const wxRect& rect, wxDC& dc, wxBitmap& bitmap)
-{
-	float fWScale = 1.0f;
-	float fHScale = 1.0f;
-	int iImageH = -1;
-	int iImageW = -1;
-	int iThisH = -1;
-	int iThisW = -1;
-
-	iImageH = bitmap.GetHeight();
-	iImageW = bitmap.GetWidth();
-
-	GetSize(&iThisW, &iThisH);
-	fHScale = (float) iThisH / (float) iImageH;
-	fWScale = (float) iThisW / (float) iImageW;
-
-	dc.SetUserScale(fWScale, fHScale);
-	dc.DrawBitmap(bitmap,0,0,false);
 }
