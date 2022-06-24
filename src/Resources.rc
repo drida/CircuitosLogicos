@@ -1,8 +1,9 @@
-ID_BACKGROUND1 RCDATA "assets/background.png"
-ID_BACKGROUND2 RCDATA "assets/espaco.png"
+ID_BACKGROUND RCDATA "assets/background.png"
 
 ID_AND RCDATA "assets/and.png"
 ID_OR RCDATA "assets/or.png"
 ID_NOT RCDATA "assets/not.png"
 ID_NAND RCDATA "assets/nand.png"
 ID_NOR RCDATA "assets/nor.png"
+
+ID_INPUT RCDATA "assets/input.png"

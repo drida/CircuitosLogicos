@@ -1,23 +1,19 @@
 /***************************************************************
- * Name:      CircuitosLogicosLinuxMain.cpp
+ * Name:      CircuitosLogicosMain.cpp
  * Purpose:   Code for Application Frame
- * Author:    Adriano Araujo (drida@drida.com.br)
+ * Author:    Adriano Vilanova Araujo (adriano@vilanovaaraujo.eng.br)
  * Created:   2021-01-10
- * Copyright: Adriano Araujo (http://drida.com.br)
- * License:
+ * Copyright: Adriano Vilanova Araujo (http://vilanovaaraujo.eng.br)
+ * License:   MIT
  **************************************************************/
 
 #ifdef WX_PRECOMP
 #include "wx_pch.h"
 #endif
 
-#ifdef __BORLANDC__
-#pragma hdrstop
-#endif //__BORLANDC__
-
 #include "CircuitosLogicosMain.h"
 #include "Circuit.h"
-#include "Circuit_Template.h"
+#include "Data.h"
 #include "Game.h"
 #include "Tetris.h"
 
@@ -50,8 +46,6 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 BEGIN_EVENT_TABLE(CircuitosLogicosMain, wxFrame)
-    EVT_CLOSE(CircuitosLogicosMain::OnClose)
-	EVT_MENU(idMenuTemplate, CircuitosLogicosMain::OnTemplate)
 	EVT_MENU(idMenuTetris, CircuitosLogicosMain::OnTetris)
 	EVT_MENU(idMenuGame, CircuitosLogicosMain::OnGame)
     EVT_MENU(idMenuQuit, CircuitosLogicosMain::OnQuit)
@@ -65,9 +59,8 @@ CircuitosLogicosMain::CircuitosLogicosMain(wxFrame *frame, const wxString& title
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
     wxMenu* fileMenu = new wxMenu(_T(""));
-    fileMenu->Append(idMenuTemplate, _("&Template"), _("Modeler application"));
-    fileMenu->Append(idMenuTetris, _("Tetris"), _("Mini game"));
     fileMenu->Append(idMenuGame, _("&Game"), _("Full game"));
+    fileMenu->Append(idMenuTetris, _("Tetris"), _("Mini game"));
     fileMenu->Append(idMenuQuit, _("&Quit\tAlt-F4"), _("Quit the application"));
     mbar->Append(fileMenu, _("&File"));
 
@@ -85,43 +78,13 @@ CircuitosLogicosMain::CircuitosLogicosMain(wxFrame *frame, const wxString& title
     SetStatusText(wxbuildinfo(short_f), 1);
 #endif // wxUSE_STATUSBAR
 
-}
+    dataStage = new Data();
 
-
-CircuitosLogicosMain::~CircuitosLogicosMain()
-{
 }
 
 void CircuitosLogicosMain::OnClose(wxCloseEvent &event)
 {
     Destroy();
-}
-
-void CircuitosLogicosMain::OnTemplate(wxCommandEvent &event)
-{
-	Circuit* Fase1 = new Circuit();
-	Fase1->SetCoordinates(0, 0, 800, 600);
-	Fase1->AddOperator(otOR);
-	Fase1->AddOperator(otAND);
-	Fase1->AddOperator(otNOT);
-	Fase1->AddOperator(otNAND);
-	Fase1->AddOperator(otNOT);
-	Fase1->AddConnector(ctINPUT,0,0,-1,-1);
-	Fase1->AddConnector(ctINPUT,0,1,-1,-1);
-	Fase1->AddConnector(ctINPUT,2,0,-1,-1);
-	Fase1->AddConnector(ctINPUT,3,0,-1,-1);
-	Fase1->AddConnector(ctINPUT,3,1,-1,-1);
-	Fase1->AddConnector(ctIN_OUT,1,0,0,0);
-	Fase1->AddConnector(ctIN_OUT,1,1,2,0);
-	Fase1->AddConnector(ctIN_OUT,4,0,3,0);
-	Fase1->AddConnector(ctOUTPUT,-1,-1,1,0);
-	Fase1->AddConnector(ctOUTPUT,-1,-1,4,0);
-
-	Circuit_Template* Frame = new Circuit_Template(wxT("FASE 1"), Fase1, wxSize(1000,800));
-	//Frame->SetBackground("assets/background.png");
-	Frame->SetBackground("../assets/14624.jpg");
-	Frame->Centre();
-	Frame->Show(true);
 }
 
 void CircuitosLogicosMain::OnTetris(wxCommandEvent &event)
@@ -132,28 +95,14 @@ void CircuitosLogicosMain::OnTetris(wxCommandEvent &event)
 
 void CircuitosLogicosMain::OnGame(wxCommandEvent &event)
 {
-    Circuit* Fase1 = new Circuit();
-	Fase1->SetCoordinates(0, 0, 800, 600);
-	Fase1->AddOperator(otOR);
-	Fase1->AddOperator(otAND);
-	Fase1->AddOperator(otNOT);
-	Fase1->AddOperator(otNAND);
-	Fase1->AddOperator(otNOT);
-	Fase1->AddConnector(ctINPUT,0,0,-1,-1);
-	Fase1->AddConnector(ctINPUT,0,1,-1,-1);
-	Fase1->AddConnector(ctINPUT,2,0,-1,-1);
-	Fase1->AddConnector(ctINPUT,3,0,-1,-1);
-	Fase1->AddConnector(ctINPUT,3,1,-1,-1);
-	Fase1->AddConnector(ctIN_OUT,1,0,0,0);
-	Fase1->AddConnector(ctIN_OUT,1,1,2,0);
-	Fase1->AddConnector(ctIN_OUT,4,0,3,0);
-	Fase1->AddConnector(ctOUTPUT,-1,-1,1,0);
-	Fase1->AddConnector(ctOUTPUT,-1,-1,4,0);
+    dataStage->SetStage(0);
+    Circuit* circuit = new Circuit();
+    circuit->SetCoordinates(0, 0, 800, 400);
+    MountStage(dataStage->GetStage(), circuit);
 
-	Game* Frame = new Game(wxT("FASE 1"), Fase1);
-	Frame->SetBackground("assets/background.png");
-	Frame->Centre();
-	Frame->Show(true);
+    Game* Frame = new Game(wxT("Nivel "+to_string(dataStage->GetStage())), circuit, dataStage, wxSize(1000,600));
+    Frame->Centre();
+    Frame->Show();
 }
 
 void CircuitosLogicosMain::OnQuit(wxCommandEvent &event)
@@ -165,4 +114,196 @@ void CircuitosLogicosMain::OnAbout(wxCommandEvent &event)
 {
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
+}
+
+Circuit* CircuitosLogicosMain::MountStage(int numStage, Circuit* circuit)
+{
+    switch(numStage) {
+      case 1000:
+        circuit->AddOperator(otNAND); // 0
+        circuit->AddOperator(otOR); // 1
+        circuit->AddOperator(otNAND); // 2
+        circuit->AddOperator(otNOT); // 3
+        circuit->AddOperator(otNOR); // 4
+        circuit->AddOperator(otNOT); // 5
+        circuit->AddOperator(otAND); // 6
+        circuit->AddOperator(otAND); // 7
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctINPUT,4,0,-1,-1);
+        circuit->AddConnector(ctINPUT,4,1,-1,-1);
+        circuit->AddConnector(ctINPUT,5,0,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctIN_OUT,3,0,2,0);
+        circuit->AddConnector(ctIN_OUT,6,0,4,0);
+        circuit->AddConnector(ctIN_OUT,6,1,5,0);
+        circuit->AddConnector(ctIN_OUT,7,0,3,0);
+        circuit->AddConnector(ctIN_OUT,7,1,6,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,7,0);
+        circuit->SetConnectorSignal(4, true);
+        circuit->SetConnectorSignal(5, true);
+        break;
+      case 1:
+        circuit->AddOperator(otOR); // 0
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctOUTPUT,-1,-1,0,0);
+        break;
+      case 2:
+        circuit->AddOperator(otAND); // 0
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctOUTPUT,-1,-1,0,0);
+        break;
+      case 3:
+        circuit->AddOperator(otNOT); // 0
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctOUTPUT,-1,-1,0,0);
+        circuit->SetConnectorSignal(0, true);
+        break;
+      case 4:
+        circuit->AddOperator(otNAND); // 0
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctOUTPUT,-1,-1,0,0);
+        circuit->SetConnectorSignal(0, true);
+        circuit->SetConnectorSignal(1, true);
+        break;
+      case 5:
+        circuit->AddOperator(otNOR); // 0
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctOUTPUT,-1,-1,0,0);
+        circuit->SetConnectorSignal(0, true);
+        circuit->SetConnectorSignal(1, true);
+        break;
+      case 6:
+        circuit->AddOperator(otOR); // 0
+        circuit->AddOperator(otOR); // 1
+        circuit->AddOperator(otAND); // 2
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,2,0);
+        break;
+      case 7:
+        circuit->AddOperator(otAND); // 0
+        circuit->AddOperator(otAND); // 1
+        circuit->AddOperator(otOR); // 2
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,2,0);
+        break;
+      case 8:
+        circuit->AddOperator(otAND); // 0
+        circuit->AddOperator(otOR); // 1
+        circuit->AddOperator(otAND); // 2
+        circuit->AddOperator(otNOT); // 3
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctIN_OUT,3,0,2,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,3,0);
+        circuit->SetConnectorSignal(0, true);
+        circuit->SetConnectorSignal(1, true);
+        circuit->SetConnectorSignal(2, true);
+        circuit->SetConnectorSignal(3, true);
+        break;
+      case 9:
+        circuit->AddOperator(otNAND); // 0
+        circuit->AddOperator(otOR); // 1
+        circuit->AddOperator(otOR); // 2
+        circuit->AddOperator(otNOT); // 3
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctIN_OUT,3,0,2,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,3,0);
+        circuit->SetConnectorSignal(0, true);
+        circuit->SetConnectorSignal(1, true);
+        circuit->SetConnectorSignal(2, true);
+        circuit->SetConnectorSignal(3, true);
+        break;
+      case 10:
+        circuit->AddOperator(otNAND); // 0
+        circuit->AddOperator(otOR); // 1
+        circuit->AddOperator(otNAND); // 2
+        circuit->AddOperator(otNOT); // 3
+        circuit->AddOperator(otNOR); // 4
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctINPUT,4,0,-1,-1);
+        circuit->AddConnector(ctINPUT,4,1,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctIN_OUT,3,0,2,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,3,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,4,0);
+        circuit->SetConnectorSignal(4, true);
+        circuit->SetConnectorSignal(5, true);
+        break;
+      case 11:
+        circuit->AddOperator(otNAND); // 0
+        circuit->AddOperator(otOR); // 1
+        circuit->AddOperator(otNAND); // 2
+        circuit->AddOperator(otNOT); // 3
+        circuit->AddOperator(otNOR); // 4
+        circuit->AddOperator(otNOT); // 5
+        circuit->AddOperator(otAND); // 6
+        circuit->AddOperator(otAND); // 7
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,1,0,-1,-1);
+        circuit->AddConnector(ctINPUT,1,1,-1,-1);
+        circuit->AddConnector(ctINPUT,4,0,-1,-1);
+        circuit->AddConnector(ctINPUT,4,1,-1,-1);
+        circuit->AddConnector(ctINPUT,5,0,-1,-1);
+        circuit->AddConnector(ctIN_OUT,2,0,0,0);
+        circuit->AddConnector(ctIN_OUT,2,1,1,0);
+        circuit->AddConnector(ctIN_OUT,3,0,2,0);
+        circuit->AddConnector(ctIN_OUT,6,0,4,0);
+        circuit->AddConnector(ctIN_OUT,6,1,5,0);
+        circuit->AddConnector(ctIN_OUT,7,0,3,0);
+        circuit->AddConnector(ctIN_OUT,7,1,6,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,7,0);
+        circuit->SetConnectorSignal(4, true);
+        circuit->SetConnectorSignal(5, true);
+        break;
+      default:
+        circuit->AddOperator(otOR); // 0
+        circuit->AddOperator(otAND); // 1
+        circuit->AddOperator(otNOT); // 2
+        circuit->AddOperator(otNAND); // 3
+        circuit->AddOperator(otNOR); // 4
+        circuit->AddConnector(ctINPUT,0,0,-1,-1);
+        circuit->AddConnector(ctINPUT,0,1,-1,-1);
+        circuit->AddConnector(ctINPUT,2,0,-1,-1);
+        circuit->AddConnector(ctINPUT,3,0,-1,-1);
+        circuit->AddConnector(ctINPUT,3,1,-1,-1);
+        circuit->AddConnector(ctIN_OUT,1,0,0,0);
+        circuit->AddConnector(ctIN_OUT,1,1,2,0);
+        circuit->AddConnector(ctIN_OUT,4,0,3,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,1,0);
+        circuit->AddConnector(ctOUTPUT,-1,-1,4,0);
+    }
+
+    return circuit;
 }

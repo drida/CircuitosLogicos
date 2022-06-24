@@ -1,32 +1,16 @@
 #ifndef DATA_H
 #define DATA_H
 
-//#include "sqlite3.h"
-
-class _Data
-{
-
-};
-
-class _DataStage : public _Data
-{
-
-};
-
-class _DataUser : public _Data
-{
-
-};
-
 class Data
 {
-	public:
-		Data();
+    public:
+        Data();
 		~Data();
+		void SetStage(int numStage);
+        int GetStage();
 
-	private:
-		_DataStage Stage;
-		_DataUser User;
+    private:
+        int NumStage;
 };
 
 #endif // DATA_H

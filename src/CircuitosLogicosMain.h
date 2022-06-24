@@ -15,27 +15,31 @@
 #endif
 
 #include "CircuitosLogicosApp.h"
+#include "Circuit.h"
+#include "Data.h"
 
 class CircuitosLogicosMain: public wxFrame
 {
     public:
         CircuitosLogicosMain(wxFrame *frame, const wxString& title);
-        ~CircuitosLogicosMain();
     private:
+        Data* dataStage;
+
         enum
         {
-        	idMenuTemplate = 1000,
-        	idMenuTetris ,
-        	idMenuGame,
+            idMenuGame,
+        	idMenuTetris,
             idMenuQuit,
             idMenuAbout
         };
-        void OnTemplate(wxCommandEvent& event);
-        void OnTetris(wxCommandEvent& event);
+
         void OnGame(wxCommandEvent& event);
+        void OnTetris(wxCommandEvent& event);
         void OnClose(wxCloseEvent& event);
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
+        Circuit* MountStage(int numStage, Circuit* Stage);
+
         DECLARE_EVENT_TABLE()
 };
 
